@@ -73,12 +73,6 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.php">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
             <a class="nav-link" href="./circulation.php">
               <i class="material-icons">library_books</i>
               <p>การยืม-คืนอุปกรณ์</p>

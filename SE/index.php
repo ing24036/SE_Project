@@ -73,13 +73,13 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./circulation.php">
+            <a class="nav-link" href="./view/circulation.php">
               <i class="material-icons">library_books</i>
               <p>การยืม-คืนอุปกรณ์</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./history_circulation.php">
+            <a class="nav-link" href="./view/history_circulation.php">
               <i class="material-icons">bubble_chart</i>
               <p>ประวัติการยืม-คืนอุปกรณ์</p>
             </a>

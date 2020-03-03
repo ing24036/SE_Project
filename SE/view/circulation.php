@@ -160,7 +160,7 @@
                                                     <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                     <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                     <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">รายละเอียดอื่นๆ</th>
+                                                    <th rowspan="1" colspan="1">รายละเอียด</th>
                                                     <th rowspan="1" colspan="1">จัดการ</th>
                                                 </tr>
                                             </thead>
@@ -170,7 +170,7 @@
                                                     <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                     <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                     <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">รายละเอียดอื่นๆ</th>
+                                                    <th rowspan="1" colspan="1">รายละเอียด</th>
                                                     <th rowspan="1" colspan="1">จัดการ</th>
                                                 </tr>
                                             </tfoot>

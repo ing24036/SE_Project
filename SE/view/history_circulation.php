@@ -109,44 +109,11 @@
             <div class="content">
                 <div class="container-fluid">
 
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="card card-stats" id="AddTypeEquipment" style="cursor:pointer;">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">get_app</i>
-                                    </div>
-                                    <p class="card-category"></p>
-                                    <h3 class="card-title">คลังอุปกรณ์ที่ต้องการยืม
-                                        <small></small>
-                                    </h3>
 
-                                </div>
-                                <div class="card-footer">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="card card-stats" id="return_equipment" style="cursor:pointer;">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">get_app</i>
-                                    </div>
-                                    <p class="card-category"></p>
-                                    <h3 class="card-title">การคืนอุปกรณ์
-                                        <small></small>
-                                    </h3>
-
-                                </div>
-                                <div class="card-footer">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- *********รายชื่ออาจารย์ทั้งหมด*********** -->
                     <div class="card shadow mb-4">
                         <div class="card-header card-header-success">
-                            <h4 class="card-title">รายชื่ออุปกรณ์ที่ยืมได้
+                            <h4 class="card-title">ประวัติการยืม-คืนอุปกรณ์
                             </h4>
                         </div>
                         <div class="card-body table-responsive">
@@ -156,50 +123,41 @@
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr role="row">
-                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">รหัสผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">ชื่อผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">วันที่ยืม</th>
+                                                    <th rowspan="1" colspan="1">กำหนดคืน</th>
+                                                    <th rowspan="1" colspan="1">วันที่คืน</th>
                                                     <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
-                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                     <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">รายละเอียดอื่นๆ</th>
-                                                    <th rowspan="1" colspan="1">จัดการ</th>
+                                                    <th rowspan="1" colspan="1">จำนวน</th>
                                                 </tr>
                                             </thead>
                                             <tfoot>
                                                 <tr>
-                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">รหัสผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">ชื่อผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">วันที่ยืม</th>
+                                                    <th rowspan="1" colspan="1">กำหนดคืน</th>
+                                                    <th rowspan="1" colspan="1">วันที่คืน</th>
                                                     <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
-                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                     <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">รายละเอียดอื่นๆ</th>
-                                                    <th rowspan="1" colspan="1">จัดการ</th>
+                                                    <th rowspan="1" colspan="1">จำนวน</th>
                                                 </tr>
                                             </tfoot>
                                             <tbody>
                                                 <tr role="row" class="odd">
-                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                    <td>1212312121</td>
-                                                    <td>อุปกรณ์iot</td>
-                                                    <td>บอร์ดraspberrypi</td>
-                                                    <td>กกกกกกกกกกกกกกกกกกกกกกกก</td>
-                                                    <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">get_app</i>
-                                                        </button>
-
-                                                    </td>
-                                                </tr>
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                    <td>11111122222</td>
-                                                    <td>อุปกรณ์iot</td>
+                                                    <td>6020500381</td>
+                                                    <td>นาย xxxx xxxxxx</td>
+                                                    <td>03/03/2563</td>
+                                                    <td>08/03/2563</td>
+                                                    <td>08/03/2563</td>
+                                                    <td>1212312214</td>
                                                     <td>บอร์ดArduino</td>
-                                                    <td>กกกกกกกกกกกกกกกกกกกกกกกก</td>
-                                                    <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">get_app</i>
-                                                        </button>
-                                                    </td>
+                                                    <td>3</td>
+                                                    
                                                 </tr>
+                                                
                                             </tbody>
                                         </table>
                                     </div>

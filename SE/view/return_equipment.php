@@ -72,7 +72,7 @@
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:void(0)">ระบบยืม-คืนอุปกรณ์</a>
+                        <a class="navbar-brand" href="javascript:void(0)">การยืม-คืนอุปกรณ์</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
                         <span class="sr-only">Toggle navigation</span>
@@ -109,46 +109,11 @@
             <div class="content">
                 <div class="container-fluid">
 
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                            <div class="card card-stats" id="AddTypeEquipment" style="cursor:pointer;">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">get_app</i>
-                                    </div>
-                                    <p class="card-category"></p>
-                                    <h3 class="card-title">คลังอุปกรณ์ที่ต้องการยืม
-                                        <small></small>
-                                    </h3>
 
-                                </div>
-                                <div class="card-footer">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6" >
-                            <a href='./return_equipment.php'>
-                            <div class="card card-stats"  style="cursor:pointer;">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">get_app</i>
-                                    </div>
-                                    <p class="card-category"></p>
-                                    <h3 class="card-title">การคืนอุปกรณ์
-                                        <small></small>
-                                    </h3>
-
-                                </div>
-                                <div class="card-footer">
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
                     <!-- *********รายชื่ออาจารย์ทั้งหมด*********** -->
                     <div class="card shadow mb-4">
                         <div class="card-header card-header-success">
-                            <h4 class="card-title">รายชื่ออุปกรณ์ที่ยืมได้
+                            <h4 class="card-title">รายการการยืมอุปกรณ์
                             </h4>
                         </div>
                         <div class="card-body table-responsive">
@@ -162,7 +127,10 @@
                                                     <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                     <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                     <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">จำนวน</th>
+                                                    <th rowspan="1" colspan="1">รหัสผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">รายชื่อผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">วันที่ยืม</th>
+                                                    <th rowspan="1" colspan="1">วันที่สิ้นสุดการยืม</th>
                                                     <th rowspan="1" colspan="1">จัดการ</th>
                                                 </tr>
                                             </thead>
@@ -172,7 +140,10 @@
                                                     <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                     <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                     <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">จำนวน</th>
+                                                    <th rowspan="1" colspan="1">รหัสผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">รายชื่อผู้ยืม</th>
+                                                    <th rowspan="1" colspan="1">วันที่ยืม</th>
+                                                    <th rowspan="1" colspan="1">วันที่สิ้นสุดการยืม</th>
                                                     <th rowspan="1" colspan="1">จัดการ</th>
                                                 </tr>
                                             </tfoot>
@@ -182,10 +153,13 @@
                                                     <td>AC032948234</td>
                                                     <td>อุปกรณ์iot</td>
                                                     <td>บอร์ดraspberrypi</td>
-                                                    <td>10</td>
+                                                    <td>6020500022</td>
+                                                    <td>นาย เอ บีซี</td>
+                                                    <td>02/03/2563</td>
+                                                    <td>20/03/2563</td>
                                                     <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" id="AddToCart" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">add_shopping_cart</i>
+                                                        <button id="return" type="button" rel="tooltip" title="คืนอุปกรณ์" class="btn btn-black btn-link btn-sm">
+                                                            <i class="material-icons">reorder</i>
                                                         </button>
 
                                                     </td>
@@ -195,10 +169,13 @@
                                                     <td>AC032948234</td>
                                                     <td>อุปกรณ์iot</td>
                                                     <td>บอร์ดArduino</td>
-                                                    <td>5</td>
+                                                    <td>6020500381</td>
+                                                    <td>นาย ดี ดีดี</td>
+                                                    <td>02/03/2563</td>
+                                                    <td>20/03/2563</td>
                                                     <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" id="AddToCart" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">add_shopping_cart</i>
+                                                        <button id="return" type="button" rel="tooltip" title="คืนอุปกรณ์" class="btn btn-black btn-link btn-sm">
+                                                            <i class="material-icons">reorder</i>
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -211,144 +188,40 @@
                     </div>
 
                 </div>
-                <!-- **************************popupของการเพิ่มรายชื่ออาจารย์****************************** -->
-                <div id="modalAddTypeEquipment" class="modal">
+                <!-- **************************popupของการรับอุปกรณ์****************************** -->
+                <div id="modalReturn" class="modal">
                     <form class="modal-dialog modal-lg" method="post" action="processaddsubject.php">
                         <div class="modal-content">
                             <div class="modal-header ">
-                                <h3 class="modal-title"><span style="color: white">รายการอุปกรณ์ที่ยืม</span></h3>
+                                <h3 class="modal-title"><span style="color: white">รายการอุปกรณ์ที่ต้องการยืม</span></h3>
                             </div>
                             <div class="modal-body" id="addModalBody">
-                                <div class="row center">
-                                    <div class="col-sm-12">
-                                        <table class="table table-bordered" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr role="row">
-                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
-                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">จำนวน</th>
-                                                    <th rowspan="1" colspan="1">จัดการ</th>
-                                                </tr>
-                                            </thead>
-                                            <tfoot>
-                                                <tr>
-                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
-                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">จำนวน</th>
-                                                    <th rowspan="1" colspan="1">จัดการ</th>
-                                                </tr>
-                                            </tfoot>
-                                            <tbody>
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                    <td>AC032948234</td>
-                                                    <td>อุปกรณ์iot</td>
-                                                    <td>บอร์ดraspberrypi</td>
-                                                    <td>2</td>
-                                                    <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">cancel</i>
-                                                        </button>
+                                <div class="row mb-4  mr-6" >
+                                    <div class="col-3  text-right">
+                                        <span>สถานะ :</span>
+                                    </div>
 
-                                                    </td>
-                                                </tr>
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                    <td>AC032948255</td>
-                                                    <td>อุปกรณ์iot</td>
-                                                    <td>บอร์ดArduino</td>
-                                                    <td>1</td>
-                                                    <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">cancel</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+
+                                    <div class="col-xl-5 col-12">
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio">
+                                            <label class="form-check-label" for="exampleCheck1">ได้รับแล้ว</label>
+
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio"  >
+                                            <label class="form-check-label" for="exampleCheck1">ยังไม่ได้รับ</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-                <!-- **************************popupการคืนอุปกรณ์************************************* -->
-                <div id="modalReturnEquipment" class="modal">
-                    <form class="modal-dialog modal-lg" method="post" action="processaddsubject.php">
-                        <div class="modal-content">
-                            <div class="modal-header ">
-                                <h3 class="modal-title"><span style="color: white">รายการอุปกรณ์ที่ยังไม่คืน</span></h3>
-                            </div>
-                            <div class="modal-body" id="addModalBody">
-                                <div class="row center">
-                                    <div class="col-sm-12">
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr role="row">
-                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
-                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">รายชื่อผู้ยืม</th>
-                                                    <th rowspan="1" colspan="1">วันที่ยืม</th>
-                                                    <th rowspan="1" colspan="1">วันที่สิ้นสุดการยืม</th>
-                                                    <th rowspan="1" colspan="1">จัดการ</th>
-                                                </tr>
-                                            </thead>
-                                            <tfoot>
-                                                <tr>
-                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
-                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
-                                                    <th rowspan="1" colspan="1">รายชื่อผู้ยืม</th>
-                                                    <th rowspan="1" colspan="1">วันที่ยืม</th>
-                                                    <th rowspan="1" colspan="1">วันที่สิ้นสุดการยืม</th>
-                                                    <th rowspan="1" colspan="1">จัดการ</th>
-                                                </tr>
-                                            </tfoot>
-                                            <tbody>
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                    <td>1212312121</td>
-                                                    <td>อุปกรณ์iot</td>
-                                                    <td>บอร์ดraspberrypi</td>
-                                                    <td>นาย เอ บีซี</td>
-                                                    <td>02/03/2563</td>
-                                                    <td>20/03/2563</td>
-                                                    <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">get_app</i>
-                                                        </button>
-
-                                                    </td>
-                                                </tr>
-                                                <tr role="row" class="odd">
-                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                    <td>11111122222</td>
-                                                    <td>อุปกรณ์iot</td>
-                                                    <td>บอร์ดArduino</td>
-                                                    <td>นาย ดี ดีดี</td>
-                                                    <td>02/03/2563</td>
-                                                    <td>20/03/2563</td>
-                                                    <td class="td-actions text-center">
-                                                        <button type="button" rel="tooltip" title="เพิ่มเข้าคลังที่จะยืม" class="btn btn-black btn-link btn-sm">
-                                                            <i class="material-icons">get_app</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <div class="row mb-4">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
+                                            <span>หมายเหตุ :</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                            <textarea class="form-control"  ></textarea>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-success" name="submitedit">ยืนยัน</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
@@ -356,77 +229,6 @@
                             </div>
 
                         </div>
-                    </form>
-                </div>
-                <!-- **************************popupการเพิ่มรายการที่ต้อการ****************************** -->
-                <div id="modalAddToCart" class="modal">
-                    <form class="modal-dialog modal-lg" method="post" action="processaddsubject.php">
-                        <div class="modal-content">
-                            <div class="modal-header ">
-                                <h3 class="modal-title"><span style="color: white">รายละเอียดอุปกรณ์</span></h3>
-                            </div>
-                            <div class="modal-body" id="addModalBody">
-                                <div class="container">
-                                    <div class="row mb-4">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
-
-                                        </div>
-                                        <img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" width="35%" height="35%">
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
-                                            <span>เลขครุภัณฑ์ :</span>
-                                        </div>
-                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                                            <input type="text" class="form-control" id="semester" value="AC0924709" maxlength="100" disabled="">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
-                                            <span>ชื่ออุปกรณ์ :</span>
-                                        </div>
-                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                                            <input type="text" class="form-control" id="semester" value="บอร์ดArduino" maxlength="100" disabled="">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
-                                            <span>หมวดหมู่อุปกรณ์ <span style="color: red">*</span> :</span>
-                                        </div>
-                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                                            <input type="text" class="form-control" id="semester" value="อุปกรณ์iot" maxlength="100" disabled="">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
-                                            <span>จำนวนอุปกรณ์ที่ต้องการ :</span>
-                                        </div>
-                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                                            <input type="text" class="form-control" id="type_add" name="type_add" placeholder="กรุณากรอกจำนวนอุปกรณ์" maxlength="8">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4" style="margin:10px;">
-                                        <div class="col-xl-3 col-12 text-right">
-                                            <span>วันที่จอง : </span>
-                                        </div>
-                                        <div class="col-xl-3 col-12">
-                                            <input type="date" class="form-control" id="date" value="2020-03-05" maxlength="100">
-                                        </div>
-                                        <div class="col-xl-3 col-12 ">
-                                            <span>วันที่จะคืน : </span>
-                                        </div>
-                                        <div class="col-xl-3 col-12 ">
-                                            <input type="date" class="form-control" id="date" value="2020-03-05" maxlength="100">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success" name="submitedit">ยืนยัน</button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </form>
                 </div>
             </div>
@@ -666,15 +468,8 @@
         });
         $(document).ready(function() {
             console.log("ready!");
-            $("#return_equipment").on('click', function() {
-                $("#modalReturnEquipment").modal('show');
-            });
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-        $(document).ready(function() {
-            console.log("ready!");
-            $("#AddToCart").on('click', function() {
-                $("#modalAddToCart").modal('show');
+            $("#return").on('click', function() {
+                $("#modalReturn").modal('show');
             });
             $('[data-toggle="tooltip"]').tooltip();
         });

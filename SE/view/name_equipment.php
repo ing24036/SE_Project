@@ -31,6 +31,7 @@
     <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.2/css/fileinput.css" />
     <style>
         .modal-header {
             background-color: #43a047;
@@ -60,7 +61,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
             <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            ระบบยืม-คืนอุปกรณ์
+                    ระบบยืม-คืนอุปกรณ์
                 </a></div>
             <div class="sidebar-wrapper">
                 <?php include("../main/sidebar.php"); ?>
@@ -156,6 +157,7 @@
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr role="row">
+                                                        <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                         <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
@@ -167,6 +169,7 @@
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
+                                                        <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                         <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
@@ -178,7 +181,8 @@
                                                 </tfoot>
                                                 <tbody>
                                                     <tr role="row" class="odd">
-                                                        <td>1212312121</td>
+                                                        <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
+                                                        <td>AC032948234</td>
                                                         <td>อุปกรณ์iot</td>
                                                         <td>บอร์ดraspberrypi</td>
                                                         <td rel="tooltip" title="รายชื่ออุปกรณ์"><a href="">2
@@ -209,7 +213,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr role="row" class="odd">
-                                                        <td>11111122222</td>
+                                                        <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
+                                                        <td>AC03294855</td>
                                                         <td>อุปกรณ์iot</td>
                                                         <td>บอร์ดArduino</td>
                                                         <td rel="tooltip" title="รายชื่ออุปกรณ์"><a href="">10
@@ -318,6 +323,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row mb-4">
+                                        <div class="col-xl-3 col-12 text-right">
+                                            <span>เพิ่มรูปอุปกรณ์ :</span>
+                                        </div>
+                                        <div class="col-xl-8 col-12">
+                                            <div class=" upload-content">
+                                                <div class="main-section">
+                                                    <div class="file-loading">
+                                                        <input id="file-1" type="file" name="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success" name="submitedit">ยืนยัน</button>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
@@ -328,6 +347,7 @@
 
                     </form>
                 </div>
+
             </div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -387,6 +407,8 @@
     <script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="../assets/demo/demo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.2/js/fileinput.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js"></script>
     <script>
         $(document).ready(function() {
             $().ready(function() {
@@ -561,6 +583,23 @@
                 $("#modalAddEquipment").modal('show');
             });
             $('[data-toggle="tooltip"]').tooltip();
+        });
+        //เรียกใช้เพิ่มไฟล์รูป
+        $('#file-1').fileinput({
+            theme: 'fa',
+            uploadUrl: "upload.php",
+            uploadExtraData: function() {
+                return {
+                    _token: $("input[name='_token']").val()
+                };
+            },
+            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            overwriteInitial: false,
+            maxFileSize: 2000,
+            maxFileNum: 8,
+            slugCallback: function(filename) {
+                return filename.replace('(', '_').replace(']', '_');
+            }
         });
     </script>
 </body>

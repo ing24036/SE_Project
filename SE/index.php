@@ -33,9 +33,9 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="" >
   <div class="wrapper ">
-    <div class="sidebar" data-color="green" data-background-color="black" data-image="assets/img/sidebar-2.jpg">
+    <div class="sidebar" data-color="green" data-background-color="black">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -210,27 +210,27 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr role="row">
-                          <th rowspan="1" colspan="1">ลำดับที่</th>
+                          <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                           <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
                           <th rowspan="1" colspan="1">ชื่อผู้ขอยืม</th>
                           <th rowspan="1" colspan="1">วันที่ยืม</th>
-                          <th rowspan="1" colspan="1">อาจารย์ที่รับผิดชอบ</th>
+                          <th rowspan="1" colspan="1">อาจารย์ผู้ดูแลอุปกรณ์</th>
                           <th rowspan="1" colspan="1">จัดการ</th>
                         </tr>
                       </thead>
                       <tfoot>
                         <tr>
-                          <th rowspan="1" colspan="1">ลำดับที่</th>
+                          <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                           <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
                           <th rowspan="1" colspan="1">ชื่อผู้ขอยืม</th>
                           <th rowspan="1" colspan="1">วันที่ยืม</th>
-                          <th rowspan="1" colspan="1">อาจารย์ที่รับผิดชอบ</th>
+                          <th rowspan="1" colspan="1">อาจารย์ผู้ดูแลอุปกรณ์</th>
                           <th rowspan="1" colspan="1">จัดการ</th>
                         </tr>
                       </tfoot>
                       <tbody>
                         <tr role="row" class="odd">
-                          <td class="sorting_1">1</td>
+                          <td class="sorting_1">AC032948234</td>
                           <td>บอร์ดAduino</td>
                           <td>นาย เอก สมหวัง</td>
                           <td>02/08/2562</td>
@@ -245,7 +245,7 @@
                           </td>
                         </tr>
                         <tr role="row" class="odd">
-                          <td class="sorting_1">2</td>
+                          <td class="sorting_1">AC032948555</td>
                           <td>บอร์ดAduino2</td>
                           <td>นาย สอง สามสี่</td>
                           <td>02/08/2562</td>
@@ -278,40 +278,44 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr role="row">
-                          <th rowspan="1" colspan="1">ลำดับที่</th>
+                          <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                           <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
                           <th rowspan="1" colspan="1">ชื่อผู้ขอยืม</th>
                           <th rowspan="1" colspan="1">วันที่ยืม</th>
-                          <th rowspan="1" colspan="1">อาจารย์ที่รับผิดชอบ</th>
+                          <th rowspan="1" colspan="1">วันที่กำหนดวันคืน</th>
+                          <th rowspan="1" colspan="1">อาจารย์ผู้ดูแลอุปกรณ์</th>
                           <th rowspan="1" colspan="1">สถานะ</th>
                         </tr>
                       </thead>
                       <tfoot>
                         <tr>
-                          <th rowspan="1" colspan="1">ลำดับที่</th>
+                          <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                           <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
                           <th rowspan="1" colspan="1">ชื่อผู้ขอยืม</th>
                           <th rowspan="1" colspan="1">วันที่ยืม</th>
-                          <th rowspan="1" colspan="1">อาจารย์ที่รับผิดชอบ</th>
+                          <th rowspan="1" colspan="1">วันที่กำหนดวันคืน</th>
+                          <th rowspan="1" colspan="1">อาจารย์ผู้ดูแลอุปกรณ์</th>
                           <th rowspan="1" colspan="1">สถานะ</th>
                         </tr>
                       </tfoot>
                       <tbody>
                         <tr role="row" class="odd">
-                          <td class="sorting_1">1</td>
+                          <td class="sorting_1">AC032948234</td>
                           <td>บอร์ดAduino</td>
                           <td>นาย เอก สมหวัง</td>
                           <td>02/08/2562</td>
+                          <td>18/08/2562</td>
                           <td>อ.นุชนาฎ สัตยากวี</td>
                           <td class="td-actions text-center">ยังไม่คืน</td>
                         </tr>
                         <tr role="row" class="odd">
-                          <td class="sorting_1">2</td>
+                          <td class="sorting_1">2AC032948555</td>
                           <td>บอร์ดAduino2</td>
                           <td>นาย สอง สามสี่</td>
                           <td>02/08/2562</td>
+                          <td>12/08/2562</td>
                           <td>อ.นุชนาฎ สัตยากวี</td>
-                          <td class="td-actions text-center">คืนแล้ว</td>
+                          <td class="td-actions text-center">รอมารับของ</td>
                         </tr>
                       </tbody>
                     </table>

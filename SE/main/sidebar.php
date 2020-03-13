@@ -8,7 +8,7 @@
     <li class="nav-item ">
         <a class='nav-link collapsed' href='#' data-toggle='collapse' data-target='#link-2' aria-expanded='true'
             aria-controls='link-2'>
-            <i class="material-icons">person</i>
+            <i class="material-icons">build</i>
             <p>จัดการอุปกรณ์</p>
         </a>
         <div id='link-2' class='collapse' aria-labelledby='headingTwo' data-parent='#accordionSidebar'>
@@ -23,19 +23,19 @@
     </li>
     <li class="nav-item ">
         <a class="nav-link" href="../view/teacher.php">
-            <i class="material-icons">content_paste</i>
+            <i class="material-icons">person</i>
             <p>รายชื่ออาจารย์</p>
         </a>
     </li>
     <li class="nav-item ">
         <a class="nav-link" href="../view/circulation.php">
-            <i class="material-icons">library_books</i>
+            <i class="material-icons">shopping_cart</i>
             <p>การยืม-คืนอุปกรณ์</p>
         </a>
     </li>
     <li class="nav-item ">
         <a class="nav-link" href="../view/history_circulation.php">
-            <i class="material-icons">bubble_chart</i>
+            <i class="material-icons">history</i>
             <p>ประวัติการยืม-คืนอุปกรณ์</p>
         </a>
     </li>

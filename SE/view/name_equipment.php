@@ -54,7 +54,7 @@
 
 <body class="">
     <div class="wrapper ">
-        <div class="sidebar" data-color="green" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+        <div class="sidebar" data-color="green" data-background-color="black">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -114,7 +114,7 @@
                             <div class="card card-stats">
                                 <div class="card-header card-header-warning card-header-icon">
                                     <div class="card-icon">
-                                        <i class="material-icons">content_copy</i>
+                                        <i class="material-icons">build</i>
                                     </div>
                                     <p class="card-category">จำนวนอุปกรณ์</p>
                                     <h3 class="card-title">2อุปกรณ์
@@ -158,7 +158,6 @@
                                                 <thead>
                                                     <tr role="row">
                                                         <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
-                                                        <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                         <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">จำนวนอุปกรณ์</th>
@@ -170,7 +169,6 @@
                                                 <tfoot>
                                                     <tr>
                                                         <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
-                                                        <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
                                                         <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
                                                         <th rowspan="1" colspan="1">จำนวนอุปกรณ์</th>
@@ -182,7 +180,7 @@
                                                 <tbody>
                                                     <tr role="row" class="odd">
                                                         <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                        <td>AC032948234</td>
+
                                                         <td>อุปกรณ์iot</td>
                                                         <td>บอร์ดraspberrypi</td>
                                                         <td rel="tooltip" title="รายชื่ออุปกรณ์"><a href="">2
@@ -214,11 +212,11 @@
                                                     </tr>
                                                     <tr role="row" class="odd">
                                                         <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
-                                                        <td>AC03294855</td>
+
                                                         <td>อุปกรณ์iot</td>
                                                         <td>บอร์ดArduino</td>
-                                                        <td rel="tooltip" title="รายชื่ออุปกรณ์"><a href="">10
-                                                                อุปกรณ์</a>
+                                                        <td rel="tooltip" title="รายชื่ออุปกรณ์" id="NameEquipment">10
+                                                            อุปกรณ์
                                                         </td>
                                                         <td>
                                                             <a class="btn btn-success btn-square btn-sm active" data-toggle="tooltip" title="ผู้ดูแลระบบ">
@@ -237,10 +235,10 @@
                                                         </td>
                                                         <td>กกกกกกกกกกกกกกกกกกกกกกกก</td>
                                                         <td class="td-actions text-center">
-                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-black btn-link btn-sm">
+                                                            <button onclick="EditEquipment()" type="button" rel="tooltip" title="Edit Task" class="btn btn-black btn-link btn-sm">
                                                                 <i class="material-icons">edit</i>
                                                             </button>
-                                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-black btn-link btn-sm">
+                                                            <button onclick="deleteEquipment()" type="button" rel="tooltip" title="Remove" class="btn btn-black btn-link btn-sm">
                                                                 <i class="material-icons">delete</i>
                                                             </button>
                                                         </td>
@@ -345,6 +343,169 @@
                             </div>
                         </div>
 
+                    </form>
+                </div>
+                <div id="modalEditEquipment" class="modal">
+                    <form class="modal-dialog modal-lg" method="post" action="processaddsubject.php">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <h3 class="modal-title"><span style="color: white">เพิ่มรายการอุปกรณ์</span></h3>
+                            </div>
+                            <div class="modal-body" id="addModalBody">
+                                <div class="container">
+                                    <div class="row mb-4">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
+                                            <span>เลขครุภัณฑ์ :</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" id="type_add" name="type_add" placeholder="กรุณากรอกเลขครุภัณฑ์" maxlength="8">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
+                                            <span>ชื่ออุปกรณ์ :</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" id="type_add" name="type_add" placeholder="กรุณากรอกชนิดอุปกรณ์" maxlength="8">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
+                                            <span>หมวดหมู่อุปกรณ์ <span style="color: red">*</span> :</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                            <select class="browser-default custom-select">
+                                                <option>-->กรุณาเลือก<--< /option> <option value='1'>อุปกรณ์iot
+                                                </option>
+                                                <option value='2'>อุปกรณ์อิเล็คทรอนิกส์</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
+                                            <span>จำนวนอุปกรณ์ :</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" id="type_add" name="type_add" placeholder="กรุณากรอกจำนวนอุปกรณ์" maxlength="8">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-xl-3 col-12 text-right">
+                                            <span>สิทธิ์การยืม :</span>
+                                        </div>
+                                        <div class="col-xl-8 col-12">
+                                            <!-- Default inline 1-->
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
+                                                <label class="custom-control-label" for="defaultInline1">อาจารย์</label>
+                                            </div>
+
+                                            <!-- Default inline 2-->
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="defaultInline2">
+                                                <label class="custom-control-label" for="defaultInline2">นิสิต</label>
+                                            </div>
+
+                                            <!-- Default inline 3-->
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="defaultInline3">
+                                                <label class="custom-control-label" for="defaultInline3">บุคคลภายนอก</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-xl-3 col-12 text-right">
+                                            <span>เพิ่มรูปอุปกรณ์ :</span>
+                                        </div>
+                                        <div class="col-xl-8 col-12">
+                                            <div class=" upload-content">
+                                                <div class="main-section">
+                                                    <div class="file-loading">
+                                                        <input id="file-1" type="file" name="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success" name="submitedit">ยืนยัน</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div id="modalNameEquipment" class="modal">
+                    <form class="modal-dialog modal-lg" method="post" action="processaddsubject.php">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <h3 class="modal-title"><span style="color: black">รายการอุปกรณ์ที่ยืม</span></h3>
+                            </div>
+                            <div class="modal-body" id="addModalBody">
+                                <div class="row center">
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
+                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">สถานะ</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th rowspan="1" colspan="1">รูปอุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">เลขครุภัณฑ์</th>
+                                                    <th rowspan="1" colspan="1">หมวดหมู่อุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">ชื่ออุปกรณ์</th>
+                                                    <th rowspan="1" colspan="1">สถานะ</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr role="row" class="odd">
+                                                    <td class="sorting_1"><img src="https://www.bahtsoft.com/demo_eqborrow/assets/images/image.png" alt="รูปภาพ" class="img-fluid rounded mx-auto d-block profile-picture-list" style="width: 50px;"></td>
+                                                    <td>AC032948234</td>
+                                                    <td>อุปกรณ์iot</td>
+                                                    <td>บอร์ดraspberrypi</td>
+                                                    <td>ถูกยืมแล้ว</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div id="modaldelete" class="modal">
+                    <form class="modal-dialog modal-lg" method="post" action="processaddsubject.php">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <h3 class="modal-title"><span style="color: white">ยืนยันการลบอุปกรณ์</span></h3>
+                            </div>
+                            
+                            <div class="modal-body" id="addModalBody">
+                                <div class="row mb-4  mr-6">
+
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success" name="submitedit">ยืนยัน</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </form>
                 </div>
 
@@ -601,6 +762,20 @@
                 return filename.replace('(', '_').replace(']', '_');
             }
         });
+        $(document).ready(function() {
+            console.log("ready!");
+            $("#NameEquipment").on('click', function() {
+                $("#modalNameEquipment").modal('show');
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        function EditEquipment() {
+            $("#modalEditEquipment").modal();
+        }
+        function deleteEquipment() {
+            $("#modaldelete").modal();
+        }
     </script>
 </body>
 
